@@ -1,0 +1,30 @@
+/* navbar.css */
+
+nav {
+    background-color: #333; /* Background color of the navbar */
+    padding: 10px; /* Padding around the navbar */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+  }
+  
+  nav a {
+    color: #fff; /* Text color of the navbar links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px 12px; /* Padding around links */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+    margin-right: 10px; /* Margin between links */
+  }
+  
+  nav a:last-child {
+    margin-right: 0; /* Remove right margin from the last link */
+  }
+  
+  nav a:hover {
+    background-color: #ff0713; /* Background color on hover */
+    color: #333; /* Text color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  }
+  
+  
+  
