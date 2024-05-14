@@ -1,0 +1,60 @@
+.movie-card {
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    display: inline-block;
+    margin: 10px;
+    width: calc(25% - 20px);
+    vertical-align: top;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-image {
+    width: 100%;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+  }
+  
+  .movie-details {
+    padding: 10px;
+  }
+  
+  .movie-details h4 {
+    margin: 0;
+  }
+  
+  .movie-details p {
+    margin: 8px 0;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-area {
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+  }
+  
+  .text-area:focus {
+    outline: none;
+    border-color: #007bff;
+  }
