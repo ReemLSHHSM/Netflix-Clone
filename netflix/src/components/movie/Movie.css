@@ -1,49 +1,60 @@
-/* Movie.css */
-
 .movie-card {
-    border: 1px solid #ccc; /* Add border to each card */
-    border-radius: 8px; /* Add border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    display: inline-block; /* Make cards display in a row */
-    margin: 10px; /* Adjust margin between cards */
-    width: calc(25% - 20px); /* Set width to 25% of container minus margins */
-    vertical-align: top; /* Align cards to the top of the row */
-    background-color: #fff; /* Set background color */
-    transition: transform 0.3s ease; /* Add transition effect */
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    display: inline-block;
+    margin: 10px;
+    width: calc(25% - 20px);
+    vertical-align: top;
+    background-color: #fff;
+    transition: transform 0.3s ease;
   }
   
   .movie-card:hover {
-    transform: scale(1.05); /* Enlarge card on hover */
+    transform: scale(1.05);
   }
   
   .movie-image {
-    width: 100%; /* Make image fill the container */
-    border-top-left-radius: 8px; /* Add border radius for rounded corners */
-    border-top-right-radius: 8px; /* Add border radius for rounded corners */
+    width: 100%;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
   }
   
   .movie-details {
-    padding: 10px; /* Add padding for spacing */
+    padding: 10px;
   }
   
   .movie-details h4 {
-    margin: 0; /* Remove default margin */
+    margin: 0;
   }
   
   .movie-details p {
-    margin: 8px 0; /* Add margin for spacing */
+    margin: 8px 0;
   }
   
   button {
-    background-color: #007bff; /* Set button background color */
-    color: #fff; /* Set button text color */
-    border: none; /* Remove button border */
-    padding: 8px 16px; /* Add padding */
-    border-radius: 4px; /* Add border radius */
-    cursor: pointer; /* Add pointer cursor */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
   button:hover {
-    background-color: #0056b3; /* Change background color on hover */
+    background-color: #0056b3;
   }
   
+  .text-area {
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+  }
+  
+  .text-area:focus {
+    outline: none;
+    border-color: #007bff;
+  }
