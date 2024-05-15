@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import './App.css';
 import Home from './components/home/Home.js'
-//import ModalMovie from '/home/reem/Netflix-Clone/netflix/src/components/modalmovie/ModalMovie.js';
+import FavList from './components/favlist/FavList.js';
 import Navbar from './components/navbar/Navbar.js'
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar/>
       <Routes>
       <Route path="/" element={<Home/>}></Route>
-     {/*} <Route path="/MovieList" element={<MovieList/>}></Route>{*/}
+     <Route path="/FavList" element={<FavList/>}></Route>
       </Routes>
     </div>
   );
