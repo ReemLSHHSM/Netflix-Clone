@@ -8,7 +8,7 @@ function Home(){
             const serverUrl='https://render-host-ih2q.onrender.com/trending';
             const response=await fetch(serverUrl);
             const jsonData=await response.json();
-           console.log(jsonData);
+           //console.log(jsonData);
             setTrensingArr(jsonData);
     }
 
