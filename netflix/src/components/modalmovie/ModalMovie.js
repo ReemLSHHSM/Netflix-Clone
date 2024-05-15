@@ -1,48 +1,88 @@
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-function ModalMovie(props){
-    const { show,handleClose,movie,src} = props;
-//console.log(isClicked);
-//console.log(movie.poster_path);
-    return (
-        <>
-         {/*}  {
-    isClicked ? (
-        
-        <>
-            <h4>{title}</h4>
-            <p>{overview}</p>
-            <textarea
-                rows="3"
-                cols="30"
-                className="text-area"
-                placeholder="Write something..."
-            ></textarea>
-            
-        </>
-    ) : null
-}{*/}
+import FavList from '../favlist/FavList';
 
-<Modal show={show} onHide={handleClose} centered>
-      <div className="modal">
-        <Modal.Header closeButton className="modal-header">
-          <Modal.Title className="modal-title">{movie.title}</Modal.Title>
-        </Modal.Header>
+
+function ModalMovie(props) {
+  const { show, handleClose, movie, src } = props;
+
+  // State for the textarea value
+  const [textArea, setTextArea] = useState('');
+
+  // Event handler for textarea change
+  const handleTextChange = (event) => {
+    setTextArea(event.target.value);
+  };
+
+  const addData = (movie, textArea) => {
+    const addUrl = 'https://render-host-ih2q.onrender.com/addMovies';
+  
+    const data = {
+      id: movie.id,
+      title: movie.title,
+      release_date: movie.release_date,
+      poster_path: movie.poster_path,
+      overview: movie.overview,
+      comment: textArea
+    };
+  
+    fetch(addUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Data was added successfully!', data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  };
+
+  return (
+    <>
+      <Modal show={show} onHide={handleClose} centered>
         <div className="modal-content">
-          <img src={src} alt="Movie" className="modal-image" />
-          <div className='scroll'>
-          <p>{movie.overview}</p></div>
+          <Modal.Header closeButton className="modal-header">
+            <Modal.Title className="modal-title">{movie.title}</Modal.Title>
+          </Modal.Header>
+          <div className="modal-body">
+            <img src={src} alt="Movie" className="modal-image" />
+            <div className="scroll">
+              <p>{movie.overview}</p>
+            </div>
+            <textarea
+              name="message"
+              rows="5"
+              cols="35"
+              placeholder="Comment here..."
+              className="modal-textarea"
+              value={textArea} // Use textArea state variable here
+              onChange={handleTextChange} // Correct the event handler name
+            />
+          </div>
+          <Modal.Footer className="modal-footer">
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={() => addData(movie,addData)}>
+              Submit
+            </Button>
+          </Modal.Footer>
         </div>
-        <Modal.Footer className="modal-footer">
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </div>
-    </Modal>
+      </Modal>
+      <FavList movie={movie}/>
+    </>
+  );
+}
 
-</>);}
 export default ModalMovie;
+
+
 
 
 
